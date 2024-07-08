@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L]
+
+
+# Redirect /pages to 404
+RewriteCond %{REQUEST_URI} ^/pages/?$
+RewriteRule ^(.*)$ /404 [R=301,L]
+
+# Custom 404 Error Document
+ErrorDocument 404 /404

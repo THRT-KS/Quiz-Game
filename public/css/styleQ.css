@@ -1,0 +1,183 @@
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+
+
+body{
+    background-image: url(../img/backgroundR.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
+
+.custom-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Move content to the top */
+    align-items: center;
+     padding-top: 3rem;
+}
+.option {
+    background-color: #ffffff;
+    color: #333B5B;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    transition: box-shadow 0.2s;
+}
+.option:hover {
+    box-shadow: 0 0 10px 5px rgba(127, 21, 202, 0.994);
+}
+.question-box {
+    font-size: 1.5rem;
+    background-image: url("../img/q1.gif");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+.question-box2 {
+    font-size: 1.5rem;
+    background-image: url("../img/q2.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+.question-box3 {
+    font-size: 1.5rem;
+    background-image: url("../img/q3.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(36, 5, 87);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+.question-box4 {
+    font-size: 1.5rem;
+    background-image: url("../img/q4.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(36, 5, 87);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box5 {
+    font-size: 1.5rem;
+    background-image: url("../img/q5.gif");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box6 {
+    font-size: 1.5rem;
+    background-image: url("../img/q6.gif");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box7 {
+    font-size: 1.5rem;
+    background-image: url("../img/q7.gif");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box8 {
+    font-size: 1.5rem;
+    background-image: url("../img/q8.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box9 {
+    font-size: 1.5rem;
+    background-image: url("../img/q9.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+.question-box10 {
+    font-size: 1.5rem;
+    background-image: url("../img/q10.png");
+    padding: 7rem; /* Increased padding */
+    border-radius: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+    height: 300px; /* Specific height */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

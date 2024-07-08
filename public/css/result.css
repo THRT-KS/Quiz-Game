@@ -1,0 +1,82 @@
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+.container {
+    display: flex; /* ใช้ Flexbox */
+    flex-direction: column; /* จัดเนื้อหาในแนวตั้ง */
+    justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางตามแกน Y */
+    height: 80%; /* ทำให้ container เต็มความสูงของหน้าจอ */
+}
+
+body {
+    background-image: url(../img/backgroundR.png);
+}
+
+.card {
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.carousel-item img {
+    border-radius: 15px;
+    width:800px;
+    height: 500px;
+}
+
+.custom-card {
+    background-color: #1a1a2e;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* .custom-card h5 {
+    color: #e94560;
+}
+.custom-card h5 {
+    color: #458ce9;
+}
+.custom-card h5 {
+    color: #dee945;
+} */
+.custom-card p {
+    color: #a6a6a6;
+}
+.custom-card .best-match {
+    font-size: 1.2rem;
+    color: #e94560;
+}
+.custom-card .skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.custom-card .skills img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.custom-card .progress {
+    background-color: #3a3a52;
+}
+.custom-card .progress-bar {
+    background-color: #45e960;
+}

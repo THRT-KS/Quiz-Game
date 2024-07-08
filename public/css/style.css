@@ -1,0 +1,24 @@
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
+html, body {
+   
+    background-image: url(../img/background.png);
+    color: rgb(255, 255, 255);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
+.container {
+    display: flex; /* ใช้ Flexbox */
+    flex-direction: column; /* จัดเนื้อหาในแนวตั้ง */
+    justify-content: center; /* จัดให้เนื้อหาอยู่ตรงกลางตามแกน Y */
+    height: 80%; /* ทำให้ container เต็มความสูงของหน้าจอ */
+}
+

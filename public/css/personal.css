@@ -1,0 +1,57 @@
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+body, html {
+    background-image: url(../img/personal.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+.form-container {
+    max-width: 65%;
+    padding: 150px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+
+
+
+}
+
+.btn-custom {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-custom:hover {
+    background-color: #5a32a3;
+    border-color: #5a32a3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .form-container {
+        max-width: 800px;
+        /* Adjusted from 600px to 800px for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 100%;
+        /* Full width on very small screens */
+        padding: 30px;
+        /* Adjusted padding for smaller screens */
+        position: static;
+        /* Remove absolute positioning for better mobile view */
+        transform: none;
+        /* Remove transform for mobile view */
+    }
+}
