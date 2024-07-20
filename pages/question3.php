@@ -56,21 +56,25 @@ if (isset($_POST['q2'])) {
     </div>
     <div class="custom-container">
         <div class="question-box3">
-            คำถามที่ 3: เวลาที่คุณต้องเผชิญกับปัญหา <br>คุณมักจะ...
+            คำถามที่ 3: คุณคิดว่าอาชีพในอนาคตของคุณ <br>คืออะไร?
         </div>
         <form action="question4" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 20px;">
-                <div class="option" onclick="submitAnswer('it')">
-                    <input type="radio" name="q3" id="q3b" value="it" class="hidden">
-                    <label for="q3b">การตรวจสอบและแก้ไขปัญหาในระบบเครือข่าย</label>
+                <div class="option" onclick="submitAnswer('ce')">
+                    <input type="radio" name="q3" id="q3b" value="ce" class="hidden">
+                    <label for="q3b">โปรแกรมเมอร์ที่สามารถโค้ดได้ในฝัน</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q3" id="q3c" value="le" class="hidden">
-                    <label for="q3c">การวิเคราะห์และปรับปรุงกระบวนการขนส่ง</label>
+                    <label for="q3c">ผู้จัดการโลจิสติกส์ที่ส่งของได้เร็วสุด</label>
                 </div>
-                <div class="option" onclick="submitAnswer('ce')">
-                    <input type="radio" name="q3" id="q3a" value="ce" class="hidden">
-                    <label for="q3a">การสร้างและทดลองโค้ดใหม่ ๆ</label>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q3" id="q3a" value="it" class="hidden">
+                    <label for="q3a">ผู้เชี่ยวชาญด้านไอทีที่แก้ปัญหาทุกอย่าง</label>
+                </div>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q3" id="q3d" value="it" class="hidden">
+                    <label for="q3d">นักวิเคราะห์ข้อมูลที่สามารถมองเห็นอนาคต</label>
                 </div>
             </div>
         </form>

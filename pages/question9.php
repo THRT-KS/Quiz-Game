@@ -55,21 +55,25 @@ if (isset($_POST['q8'])) {
     <div class="custom-container">
 
         <div class="question-box9">
-            คำถามที่ 9: คุณชอบเรียนรู้เกี่ยวกับ...
+            คำถามที่ 9: ถ้าคุณต้องสร้างแอปใหม่ คุณจะสร้างแอปอะไร?
         </div>
         <form action="question10" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 18px;">
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q9" id="q9a" value="ce" class="hidden">
-                    <label for="q9a">การพัฒนาแอปพลิเคชันมือถือและเว็บ</label>
+                    <label for="q9a">แอปเรียนรู้การเขียนโค้ดแบบสนุกๆ</label>
                 </div>
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q9" id="q9b" value="it" class="hidden">
-                    <label for="q9b">การรักษาความปลอดภัยของข้อมูลและเครือข่าย</label>
+                    <label for="q9b">แอปป้องกันไวรัสและมัลแวร์</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q9" id="q9c" value="le" class="hidden">
-                    <label for="q9c">การวางแผนและจัดการการขนส่งสินค้า</label>
+                    <label for="q9c">แอปติดตามการส่งพัสดุแบบเรียลไทม์ </label>
+                </div>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q9" id="q9d" value="it" class="hidden">
+                    <label for="q9d">แอปวิเคราะห์ข้อมูลส่วนตัวแบบง่ายๆ </label>
                 </div>
             </div>
         </form>

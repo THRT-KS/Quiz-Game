@@ -57,21 +57,25 @@ if (isset($_POST['q1'])) {
     </div>
     <div class="custom-container">
         <div class="question-box2" >
-            คำถามที่ 2: คุณรู้สึกสนุกกับการทำงานแบบไหนมากที่สุด?
+            คำถามที่ 2: เมื่อคอมพิวเตอร์ของคุณติดไวรัส <br>คุณจะทำยังไง?
         </div>
         <form action="question3" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q2" id="q2a" value="it" class="hidden">
+                    <label for="q2a">หยิบสมาร์ทโฟนมาค้นหาวิธีแก้ไข</label>
+                </div>
                 <div class="option" onclick="submitAnswer('ce')">
-                    <input type="radio" name="q2" id="q2a" value="ce" class="hidden">
-                    <label for="q2a">การสร้างและทดลองโค้ดใหม่ ๆ</label>
+                    <input type="radio" name="q2" id="q2b" value="ce" class="hidden">
+                    <label for="q2b">โทรหาช่างคอมพิวเตอร์ </label>
                 </div>
                 <div class="option" onclick="submitAnswer('it')">
-                    <input type="radio" name="q2" id="q2b" value="it" class="hidden">
-                    <label for="q2b">การตรวจสอบและแก้ไขปัญหาในระบบเครือข่าย</label>
+                    <input type="radio" name="q2" id="q2c" value="it" class="hidden">
+                    <label for="q2c">ลองรีสตาร์ทเครื่องดู</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
-                    <input type="radio" name="q2" id="q2c" value="le" class="hidden">
-                    <label for="q2c">การวิเคราะห์และปรับปรุงกระบวนการขนส่ง</label>
+                    <input type="radio" name="q2" id="q2d" value="le" class="hidden">
+                    <label for="q2d">นั่งรอให้มันหายเอง</label>
                 </div>
             </div>
         </form>

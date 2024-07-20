@@ -5,9 +5,9 @@ if (!isset($_SESSION['game_started']) || $_SESSION['game_started'] !== true || !
     exit();
 }
 if (!isset($_SESSION['ceScore'])) {
-    $_SESSION['ceScore'] = 0;
-    $_SESSION['itScore'] = 0;
-    $_SESSION['leScore'] = 0;
+    $_SESSION['ceScore'] = 10;
+    $_SESSION['itScore'] = 10;
+    $_SESSION['leScore'] = 10;
 }
 ?>
 
@@ -51,21 +51,25 @@ if (!isset($_SESSION['ceScore'])) {
     <p></p>
     <div class="custom-container">
         <div class="question-box">
-            คำถามที่ 1: ตอนมัธยม คุณชอบทำกิจกรรมอะไร?
+            คำถามที่ 1: ถ้าคุณต้องเป็นซูเปอร์ฮีโร่ในโลกดิจิทัล <br>คุณจะเลือกพลังอะไร?
         </div>
         <form action="question2" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q1" id="q1a" value="ce" class="hidden">
-                    <label for="q1a">เขียนโปรแกรมหรือสร้างแอปพลิเคชัน</label>
+                    <label for="q1a">พลังแก้บั๊กโปรแกรมในพริบตา</label>
                 </div>
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q1" id="q1b" value="it" class="hidden">
-                    <label for="q1b">แก้ไขปัญหาเกี่ยวกับระบบคอมพิวเตอร์ของโรงเรียน</label>
+                    <label for="q1b">พลังวิเคราะห์ข้อมูลแบบซูเปอร์คอมพิวเตอร์</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q1" id="q1c" value="le" class="hidden">
-                    <label for="q1c">วางแผนและจัดการกิจกรรมที่เกี่ยวกับการขนส่ง</label>
+                    <label for="q1c">พลังส่งของทันทีถึงที่หมาย</label>
+                </div>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q1" id="q1d" value="it" class="hidden">
+                    <label for="q1d">พลังป้องกันไวรัสทุกชนิด</label>
                 </div>
             </div>
         </form>

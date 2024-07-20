@@ -54,21 +54,25 @@ if (isset($_POST['q5'])) {
     </div>
     <div class="custom-container">
         <div class="question-box6">
-            คำถามที่ 6: เวลาคุณทำงานกลุ่ม คุณมักจะรับบทบาท...
+            คำถามที่ 6: ถ้าคุณเป็นบอสในเกม คุณจะสร้างบริษัทอะไร?
         </div>
         <form action="question7" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q6" id="q6b" value="it" class="hidden">
-                    <label for="q6b">ผู้ช่วยแก้ไขปัญหาและให้คำปรึกษาด้านเทคนิค</label>
+                    <label for="q6b">บริษัทไอทีที่แก้ปัญหาได้ทุกอย่าง</label>
                 </div>
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q6" id="q6a" value="ce" class="hidden">
-                    <label for="q6a">ผู้คิดค้นไอเดียใหม่ ๆ สำหรับโปรเจค</label>
+                    <label for="q6a">บริษัทซอฟต์แวร์ที่ดีที่สุดในโลก</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q6" id="q6c" value="le" class="hidden">
-                    <label for="q6c">ผู้จัดการและวางแผนกระบวนการทำงาน</label>
+                    <label for="q6c">บริษัทขนส่งที่เร็วที่สุดในจักรวาล</label>
+                </div>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q6" id="q6d" value="it" class="hidden">
+                    <label for="q6d">บริษัทวิเคราะห์ข้อมูลที่แม่นยำที่สุด</label>
                 </div>
             </div>
         </form>

@@ -64,21 +64,25 @@ if (isset($_POST['q3'])) {
     <div class="custom-container mt-5">
 
         <div class="question-box4">
-            คำถามที่ 4: คุณชอบทำงานกับ...
+            คำถามที่ 4: เมื่อคุณเล่นเกม คุณชอบบทบาทไหน?
         </div>
         <form action="question5" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q4" id="q4b" value="it" class="hidden">
-                    <label for="q4b">เครือข่ายและระบบเซิร์ฟเวอร์</label>
+                    <label for="q4b">ผู้วางแผนและวิเคราะห์การโจมตี</label>
                 </div>
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q4" id="q4a" value="ce" class="hidden">
-                    <label for="q4a">คอมพิวเตอร์และอุปกรณ์อิเล็กทรอนิกส์</label>
+                    <label for="q4a">ผู้สร้างฐานทัพและป้องกันศัตรู</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q4" id="q4c" value="le" class="hidden">
-                    <label for="q4c">สินค้าและการขนส่ง</label>
+                    <label for="q4c">ผู้ขนส่งเสบียงไปยังแนวหน้า</label>
+                </div>
+                <div class="option" onclick="submitAnswer('ce')">
+                    <input type="radio" name="q4" id="q4d" value="ce" class="hidden">
+                    <label for="q4d">ผู้ซ่อมแซมและอัปเกรดอาวุธ</label>
                 </div>
             </div>
         </form>

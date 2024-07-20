@@ -55,21 +55,25 @@ if (isset($_POST['q4'])) {
     <div class="custom-container">
 
         <div class="question-box5">
-            คำถามที่ 5: คุณสนใจในการเรียนรู้เกี่ยวกับ...
+            คำถามที่ 5: คุณชอบการเรียนรู้ผ่านทางไหนมากที่สุด?
         </div>
         <form action="question6" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q5" id="q5c" value="le" class="hidden">
-                    <label for="q5c">การจัดการโลจิสติกส์และการขนส่ง</label>
+                    <label for="q5c">ทำโปรเจคและทดลองเอง</label>
                 </div>
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q5" id="q5a" value="ce" class="hidden">
-                    <label for="q5a">การเขียนโปรแกรมและพัฒนาแอปพลิเคชัน</label>
+                    <label for="q5a">อ่านหนังสือและเอกสาร</label>
                 </div>
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q5" id="q5b" value="it" class="hidden">
-                    <label for="q5b">การรักษาความปลอดภัยของระบบข้อมูล</label>
+                    <label for="q5b">ดูวิดีโอสอนบน YouTube</label>
+                </div>
+                <div class="option" onclick="submitAnswer('le')">
+                    <input type="radio" name="q5" id="q5d" value="le" class="hidden">
+                    <label for="q5d">คุยกับผู้เชี่ยวชาญและเพื่อนๆ</label>
                 </div>
 
             </div>

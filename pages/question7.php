@@ -56,22 +56,26 @@ if (isset($_POST['q6'])) {
     <div class="custom-container">
 
         <div class="question-box7">
-            คำถามที่ 7: คุณชอบใช้เวลาว่างไปกับการ...
+            คำถามที่ 7: เมื่อคุณมีเวลาว่าง คุณชอบทำอะไร?
         </div>
         <form action="question8" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 20px;">
 
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q7" id="q7b" value="it" class="hidden">
-                    <label for="q7b">ทดลองและแก้ไขปัญหาเกี่ยวกับฮาร์ดแวร์และซอฟต์แวร์</label>
+                    <label for="q7b">เล่นเกมและดูซีรีส์</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q7" id="q7c" value="le" class="hidden">
-                    <label for="q7c">ศึกษาเกี่ยวกับการจัดการและการขนส่งสินค้า</label>
+                    <label for="q7c">ออกไปผจญภัยและสำรวจเมือง</label>
                 </div>
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q7" id="q7a" value="ce" class="hidden">
-                    <label for="q7a">พัฒนาโปรแกรมหรือแอปพลิเคชันส่วนตัว</label>
+                    <label for="q7a">เขียนโปรแกรมและสร้างแอป</label>
+                </div>
+                <div class="option" onclick="submitAnswer('le')">
+                    <input type="radio" name="q7" id="q7a" value="le" class="hidden">
+                    <label for="q7d">คิดโปรเจคใหม่ๆ และทำงานกับทีม </label>
                 </div>
             </div>
         </form>

@@ -55,22 +55,26 @@ if (isset($_POST['q9'])) {
     </div>
     <div class="custom-container">
         <div class="question-box10">
-            คำถามที่ 10: หากคุณต้องเลือกทำงานในโปรเจค คุณจะเลือกโปรเจคที่...
+            คำถามที่ 10: คุณคิดว่าอนาคตของการขนส่งจะเป็นยังไง?
         </div>
         <form action="process" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q10" id="q10b" value="it" class="hidden">
-                    <label for="q10b">ปรับปรุงระบบเครือข่ายของบริษัท</label>
+                    <label for="q10b">การส่งของผ่านระบบออนไลน์ทันที</label>
                 </div>
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q10" id="q10a" value="ce" class="hidden">
-                    <label for="q10a">สร้างเกมหรือแอปพลิเคชันใหม่</label>
+                    <label for="q10a">การใช้พลังงานสะอาดในการขนส่ง</label>
                 </div>
 
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q10" id="q10c" value="le" class="hidden">
-                    <label for="q10c">เพิ่มประสิทธิภาพในการจัดการโลจิสติกส์</label>
+                    <label for="q10c">การใช้โดรนส่งของทุกวัน</label>
+                </div>
+                <div class="option" onclick="submitAnswer('le')">
+                    <input type="radio" name="q10" id="q10d" value="le" class="hidden">
+                    <label for="q10d">ระบบขนส่งที่ไร้คนขับ</label>
                 </div>
             </div>
         </form>

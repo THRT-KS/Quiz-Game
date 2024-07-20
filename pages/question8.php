@@ -54,21 +54,25 @@ if (isset($_POST['q7'])) {
     </div>
     <div class="custom-container">
         <div class="question-box8">
-            คำถามที่ 8: คุณรู้สึกภูมิใจมากที่สุดเมื่อ...
+            คำถามที่ 8: คุณคิดว่าเทคโนโลยีอะไรที่เจ๋งที่สุดในตอนนี้?
         </div>
         <form action="question9" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center"style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q8" id="q8a" value="ce" class="hidden">
-                    <label for="q8a">โค้ดที่คุณเขียนทำงานได้อย่างสมบูรณ์แบบ</label>
+                    <label for="q8a">คอมพิวเตอร์ควอนตัม </label>
                 </div>
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q8" id="q8b" value="it" class="hidden">
-                    <label for="q8b">ระบบที่คุณดูแลไม่มีปัญหาและทำงานได้อย่างมีประสิทธิภาพ</label>
+                    <label for="q8b">ปัญญาประดิษฐ์</label>
                 </div>
                 <div class="option" onclick="submitAnswer('le')">
                     <input type="radio" name="q8" id="q8c" value="le" class="hidden">
-                    <label for="q8c">การจัดส่งสินค้าถึงปลายทางได้อย่างรวดเร็วและปลอดภัย</label>
+                    <label for="q8c">โดรนส่งของ</label>
+                </div>
+                <div class="option" onclick="submitAnswer('it')">
+                    <input type="radio" name="q8" id="q8d" value="it" class="hidden">
+                    <label for="q8d">ระบบอัตโนมัติในบ้าน </label>
                 </div>
             </div>
         </form>
