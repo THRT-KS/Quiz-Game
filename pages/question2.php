@@ -5,17 +5,31 @@ if (!isset($_SESSION['game_started']) || $_SESSION['game_started'] !== true || !
     header('Location: ../');
     exit();
 }
-if (isset($_POST['q1'])) {
-    if ($_POST['q1'] == 'ce') {
-        $_SESSION['ceScore']+=10;
-    } elseif ($_POST['q1'] == 'it') {
-        $_SESSION['itScore']+=10;
-    } else {
-        $_SESSION['leScore']+=10;
+
+if (!isset($_SESSION['ceScore'])) $_SESSION['ceScore'] = 0;
+if (!isset($_SESSION['itScore'])) $_SESSION['itScore'] = 0;
+if (!isset($_SESSION['leScore'])) $_SESSION['leScore'] = 0;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $answer = $_POST['q2'];
+
+    switch ($answer) {
+        case 'ce':
+            $_SESSION['ceScore'] += 10;
+            break;
+        case 'it':
+            $_SESSION['itScore'] += 10;
+            break;
+        case 'le':
+            $_SESSION['leScore'] += 10;
+            break;
     }
+
+    // Redirect to the next question
+    header('Location: question3');
+    exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="th">
@@ -28,7 +42,7 @@ if (isset($_POST['q1'])) {
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/styleQ.css">
     <?php include '../assets/navbar.php' ?>
@@ -45,8 +59,6 @@ if (isset($_POST['q1'])) {
     </style>
 </head>
 
-
-
 <body class="fade-in">
     <div class="container mt-5">
         <div class="progress" style="height: 25px;">
@@ -56,10 +68,10 @@ if (isset($_POST['q1'])) {
         </div>
     </div>
     <div class="custom-container">
-        <div class="question-box2" >
+        <div class="question-box2">
             คำถามที่ 2: เมื่อคอมพิวเตอร์ของคุณติดไวรัส <br>คุณจะทำยังไง?
         </div>
-        <form action="question3" method="post" id="questionForm">
+        <form action="question2.php" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q2" id="q2a" value="it" class="hidden">
@@ -82,17 +94,60 @@ if (isset($_POST['q1'])) {
     </div>
 
     <script>
-        // ฟังก์ชันสำหรับการทำ fade-in
         document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add('visible');
+
+            // แสดงคำตอบและคะแนนที่จัดเก็บไว้ใน localStorage เมื่อหน้าโหลด
+            let answers = JSON.parse(localStorage.getItem('answers')) || {};
+            let scores = JSON.parse(localStorage.getItem('scores')) || {
+                ceScore: 0,
+                itScore: 0,
+                leScore: 0
+            };
+            console.log("All answers:", answers);
+            console.log("Current scores:", scores);
         });
 
         function submitAnswer(value) {
+            if (!value) return;
+
+            // ปิดใช้งานการคลิกซ้ำ
+            document.querySelectorAll('.option').forEach(option => {
+                option.onclick = null;
+            });
+
+            console.log("Selected answer:", value);
+
+            let answers = JSON.parse(localStorage.getItem('answers')) || {};
+            answers['question2'] = value;
+            localStorage.setItem('answers', JSON.stringify(answers));
+
+            let scores = JSON.parse(localStorage.getItem('scores')) || {
+                ceScore: 0,
+                itScore: 0,
+                leScore: 0
+            };
+            switch (value) {
+                case 'ce':
+                    scores.ceScore += 10;
+                    break;
+                case 'it':
+                    scores.itScore += 10;
+                    break;
+                case 'le':
+                    scores.leScore += 10;
+                    break;
+            }
+            localStorage.setItem('scores', JSON.stringify(scores));
+
+            console.log("All answers:", answers);
+            console.log("Current scores:", scores);
+
             document.querySelector('input[name="q2"][value="' + value + '"]').checked = true;
             document.getElementById('questionForm').submit();
         }
     </script>
-    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

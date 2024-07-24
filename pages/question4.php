@@ -4,17 +4,31 @@ if (!isset($_SESSION['game_started']) || $_SESSION['game_started'] !== true || !
     header('Location: ../');
     exit();
 }
-if (isset($_POST['q3'])) {
-    if ($_POST['q3'] == 'ce') {
-        $_SESSION['ceScore']+=10;
-    } elseif ($_POST['q3'] == 'it') {
-        $_SESSION['itScore']+=10;
-    } else {
-        $_SESSION['leScore']+=10;
+
+if (!isset($_SESSION['ceScore'])) $_SESSION['ceScore'] = 0;
+if (!isset($_SESSION['itScore'])) $_SESSION['itScore'] = 0;
+if (!isset($_SESSION['leScore'])) $_SESSION['leScore'] = 0;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $answer = $_POST['q4'];
+
+    switch ($answer) {
+        case 'ce':
+            $_SESSION['ceScore'] += 10;
+            break;
+        case 'it':
+            $_SESSION['itScore'] += 10;
+            break;
+        case 'le':
+            $_SESSION['leScore'] += 10;
+            break;
     }
+
+    // Redirect to the next question
+    header('Location: question5');
+    exit();
 }
 ?>
-
 
 
 
@@ -66,7 +80,7 @@ if (isset($_POST['q3'])) {
         <div class="question-box4">
             คำถามที่ 4: เมื่อคุณเล่นเกม คุณชอบบทบาทไหน?
         </div>
-        <form action="question5" method="post" id="questionForm">
+        <form action="question4" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('it')">
                     <input type="radio" name="q4" id="q4b" value="it" class="hidden">
@@ -89,12 +103,55 @@ if (isset($_POST['q3'])) {
     </div>
 
     <script>
-        // ฟังก์ชันสำหรับการทำ fade-in
         document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add('visible');
+
+            // แสดงคำตอบและคะแนนที่จัดเก็บไว้ใน localStorage เมื่อหน้าโหลด
+            let answers = JSON.parse(localStorage.getItem('answers')) || {};
+            let scores = JSON.parse(localStorage.getItem('scores')) || {
+                ceScore: 0,
+                itScore: 0,
+                leScore: 0
+            };
+            console.log("All answers:", answers);
+            console.log("Current scores:", scores);
         });
 
         function submitAnswer(value) {
+            if (!value) return;
+
+            // ปิดใช้งานการคลิกซ้ำ
+            document.querySelectorAll('.option').forEach(option => {
+                option.onclick = null;
+            });
+
+            console.log("Selected answer:", value);
+
+            let answers = JSON.parse(localStorage.getItem('answers')) || {};
+            answers['question4'] = value;
+            localStorage.setItem('answers', JSON.stringify(answers));
+
+            let scores = JSON.parse(localStorage.getItem('scores')) || {
+                ceScore: 0,
+                itScore: 0,
+                leScore: 0
+            };
+            switch (value) {
+                case 'ce':
+                    scores.ceScore += 10;
+                    break;
+                case 'it':
+                    scores.itScore += 10;
+                    break;
+                case 'le':
+                    scores.leScore += 10;
+                    break;
+            }
+            localStorage.setItem('scores', JSON.stringify(scores));
+
+            console.log("All answers:", answers);
+            console.log("Current scores:", scores);
+
             document.querySelector('input[name="q4"][value="' + value + '"]').checked = true;
             document.getElementById('questionForm').submit();
         }
