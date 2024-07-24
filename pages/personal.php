@@ -41,11 +41,11 @@ if (!isset($_SESSION['game_started']) || $_SESSION['game_started'] !== true) {
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">ชื่อ</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="" pattern="[ก-๙a-zA-Z\s]+" required>
                 </div>
                 <div class="col-md-6">
                     <label for="lastname" class="form-label">นามสกุล</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="" pattern="[ก-๙a-zA-Z\s]+" required>
                 </div>
                 <div class="col-md-6">
                     <label for="school" class="form-label">ชื่อโรงเรียน</label>
