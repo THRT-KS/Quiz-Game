@@ -5,9 +5,30 @@ if (!isset($_SESSION['game_started']) || $_SESSION['game_started'] !== true || !
     exit();
 }
 if (!isset($_SESSION['ceScore'])) {
-    $_SESSION['ceScore'] = 10;
-    $_SESSION['itScore'] = 10;
-    $_SESSION['leScore'] = 10;
+    $_SESSION['ceScore'] = 0;
+    $_SESSION['itScore'] = 0;
+    $_SESSION['leScore'] = 0;
+}
+
+// Process the answer
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $answer = $_POST['q1'];
+    
+    switch ($answer) {
+        case 'ce':
+            $_SESSION['ceScore'] += 20;
+            break;
+        case 'it':
+            $_SESSION['itScore'] += 20;
+            break;
+        case 'le':
+            $_SESSION['leScore'] += 20;
+            break;
+    }
+
+    // Redirect to the next question
+    header('Location: question2');
+    exit();
 }
 ?>
 
@@ -39,9 +60,6 @@ if (!isset($_SESSION['ceScore'])) {
     </style>
 </head>
 
-
-
-
 <body class="fade-in">
     <div class="container mt-5">
         <div class="progress" style="height: 25px;">
@@ -53,7 +71,7 @@ if (!isset($_SESSION['ceScore'])) {
         <div class="question-box">
             คำถามที่ 1: ถ้าคุณต้องเป็นซูเปอร์ฮีโร่ในโลกดิจิทัล <br>คุณจะเลือกพลังอะไร?
         </div>
-        <form action="question2" method="post" id="questionForm">
+        <form action="question1" method="post" id="questionForm">
             <div class="flex flex-wrap justify-center" style="font-size: 20px;">
                 <div class="option" onclick="submitAnswer('ce')">
                     <input type="radio" name="q1" id="q1a" value="ce" class="hidden">
@@ -82,6 +100,7 @@ if (!isset($_SESSION['ceScore'])) {
         });
 
         function submitAnswer(value) {
+            console.log("Selected answer:", value);
             document.querySelector('input[name="q1"][value="' + value + '"]').checked = true;
             document.getElementById('questionForm').submit();
         }

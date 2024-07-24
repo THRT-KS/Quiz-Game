@@ -20,44 +20,42 @@ session_start();
 
 <body>
     <div class="container mt-5">
-    <?php
+        <?php
 
-$token = $_GET['token'] ?? null;
+        $token = $_GET['token'] ?? null;
 
-if ($token) {
-    $filePath = "results/$token.json";
+        if ($token) {
+            $filePath = "results/$token.json";
 
-    if (file_exists($filePath)) {
-        $result = json_decode(file_get_contents($filePath), true);
+            if (file_exists($filePath)) {
+                $result = json_decode(file_get_contents($filePath), true);
 
-        $ceScore = $result['ceScore'];
-        $itScore = $result['itScore'];
-        $leScore = $result['leScore'];
+                $ceScore = $result['ceScore'];
+                $itScore = $result['itScore'];
+                $leScore = $result['leScore'];
 
-        $maxScore = max($ceScore, $itScore, $leScore);
+                $maxScore = max($ceScore, $itScore, $leScore);
 
-        echo '<div class="row">';
-        echo '<div class="col-md-8">';
+   
 
-        if ($ceScore == $maxScore) {
-            include '../pages/resultce.php';
-         
-        }
-             elseif ($itScore == $maxScore) {
-                include '../pages/resultit.php';
-             }
-                 elseif ($leScore == $maxScore) 
-                {
+                echo '<div class="row">';
+                echo '<div class="col-md-8">';
+
+                if ($ceScore == $maxScore) {
+                    include '../pages/resultce.php';
+                } elseif ($itScore == $maxScore) {
+                    include '../pages/resultit.php';
+                } elseif ($leScore == $maxScore) {
                     include '../pages/resultle.php';
+                } else {
+                    echo '<div class="alert alert-danger text-center">ไม่พบผลลัพธ์สำหรับ token ที่ระบุ</div>';
                 }
-             else {
-                echo '<div class="alert alert-danger text-center">ไม่พบผลลัพธ์สำหรับ token ที่ระบุ</div>';
+            } else {
+                echo '<div class="alert alert-warning text-center">ไม่มี token ที่ระบุ</div>';
             }
-        } else {
-            echo '<div class="alert alert-warning text-center">ไม่มี token ที่ระบุ</div>';
         }
-    }
         ?>
+
     </div>
 
 
